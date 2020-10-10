@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+	{% if pageExist %}
+		{{ entry }}
+	{% else %}
+		404
+	{% endif %}
+{% endblock %}
+
+{% block body %}
+	{% if pageExist %}
+		<p>{{page|safe}}</p>
+	{% else %}
+		<p>Page not exist!</p>
+	{% endif %}
+	<a href="/wiki/{{ entry }}/edit">edit</a>
+{% endblock %}
